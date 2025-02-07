@@ -2,7 +2,7 @@
 #define casasBispo 5
 #define casasTorre 5
 #define casasRainha 8
-#define casasCavalo
+#define casasCavalo 3
 // Desafio de Xadrez - MateCheck
 // printf("Cima\n"); printf("Baixo\n"); printf("Esquerda\n"); printf("Direita\n");
 int main() {
@@ -35,8 +35,19 @@ int main() {
     while(cont<=casasRainha);
 
     // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    // Implementação movimentação do cavalo
+    printf("-- CAVALO --\n");
+
+    
+    for(int cont=1;cont<=casasCavalo; cont++){
+        printf("%d. Baixo \n", cont);
+    }
+    cont=(casasCavalo+1);
+    while(cont>casasCavalo){
+        printf("%d. Esquerda \n", cont);
+        cont--;
+    }
+    
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
