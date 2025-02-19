@@ -5,6 +5,29 @@
 #define casasCavalo 3
 // Desafio de Xadrez - MateCheck
 // printf("Cima\n"); printf("Baixo\n"); printf("Esquerda\n"); printf("Direita\n");
+
+void fBispo(int fCont) {
+    if (fCont<=casasBispo){
+    printf("%d. Cima + ", fCont);
+    printf("Direita\n");
+    fBispo(fCont+1);
+    }
+}    // função nível mestre bispo
+
+void fTorre(int fCont) {
+    if (fCont<=casasTorre){
+    printf("%d. Direita \n", fCont);
+    fTorre(fCont+1);
+    }
+}    // função nível mestre torre
+
+void fRainha(int fCont) {
+    if (fCont<=casasRainha){
+    printf("%d. Esquerda\n", fCont);
+    fRainha(fCont+1);
+    }
+}    // função nível mestre rainha
+
 int main() {
     // Nível Novato - Movimentação das Peças
     int cont= 1;
@@ -50,11 +73,49 @@ int main() {
     
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    // Função declarada no cabeçalho
+    cont=1;
+    printf("-- BISPO NOVAMENTE (Mestre) --\n");
+    fBispo(cont);
+    // Final do Bispo Nível Mestre
+
+    // Função declarada no cabeçalho
+    cont=1;
+    printf("-- TORRE NOVAMENTE (Mestre) --\n");
+    fTorre(cont);
+    // Final da Torre Nível Mestre
+
+    // Função declarada no cabeçalho
+    cont=1;
+    printf("-- RAINHA NOVAMENTE (Mestre) --\n");
+    fRainha(cont);
+    // Final da Rainha Nível Mestre
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    printf("-- CAVALO NOVAMENTE (Mestre) \n"); 
+    cont=1;
+    while(cont<=(casasCavalo+1)){
+        switch (cont){
+            case(1):
+                printf("%d. Cima \n", cont);
+                cont++;
+                break;
+            case(2):
+                printf("%d. Cima \n", cont);
+                cont++;
+                break;
+            case(3):
+                printf("%d. Cima \n", cont);
+                cont++;
+                break;
+            case(4):
+                printf("%d. Direita \n", cont);
+                cont++;
+                break;
+            default:
+                break;     
+        }
+    }
 
     return 0;
 }
